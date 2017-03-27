@@ -1,0 +1,118 @@
+<ion-view title="registration" id="registration" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="has-header">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <p class="wellcome-text">
+      Register for a hassle free life
+    </p>
+    <form id="registetion-form4" name="registration.registrationForm" class="list login-form" novalidate>
+      <ion-list id="registetion-list5" class="login-inner">
+        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+            <input type="text" placeholder="Enter Your First Name" name="fname" data-ng-model="userVO.fname" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.fname.$error.required && registration.submitted">
+               {{registration.famMessages.ERROR.M200010}}
+              </small>
+          </div>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.lname.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input8">
+            <input type="text" placeholder="Enter Your Last Name" name="lname" data-ng-model="userVO.lname" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.lname.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.lname.$error.required && registration.submitted">
+               {{registration.famMessages.ERROR.M200011}}
+              </small>
+          </div>
+        </div>
+        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+          <select ng-model="userVO.sex" 
+               ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">
+             <option value=''>Sex</option>
+          </select>
+        </label>
+        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.phone.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input9">
+            <input type="number" placeholder="Enter Your Mobile Number" name="phone" data-ng-model="userVO.phone" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.phone.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.phone.$error.required && registration.submitted">
+               {{registration.famMessages.ERROR.M200012}}
+              </small>
+          </div>
+        </div>
+        <!--<div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.email.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input10">
+            <input type="email" placeholder="Enter Your Email Id" name="email" data-ng-model="userVO.email" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.email.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.email.$error.required && registration.submitted">
+               {{registration.famMessages.ERROR.M200013}}
+              </small>
+              <small class="help-block" data-ng-show="registration.registrationForm.$error.email && registration.submitted">
+                  {{testerCtrl.ptpMessages.ERROR.M200003}}
+              </small>
+          </div>
+        </div>-->
+        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.email.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input10">
+         <input type="text" placeholder="Enter Your Email Id" name="email" data-ng-model="userVO.email" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.email.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.email.$error.required && registration.submitted">
+                {{registration.famMessages.ERROR.M200017}}
+              </small>              
+          </div>          
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.pass.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input12">
+            <input type="password" placeholder="Enter Your Password" name="pass" data-ng-model="userVO.pass" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.pass.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.pass.$error.required && registration.submitted">
+               {{registration.famMessages.ERROR.M200004}}
+              </small>
+          </div>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.cpass.$error.required) && registration.submitted }">
+          <label class="item item-input item-floating-label text-fill" id="registetion-input11">
+            <input type="password" placeholder="Enter Your Password" name="cpass" data-ng-model="userVO.cpass" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="registration.registrationForm.cpass.$invalid && registration.submitted">
+              <small class="help-block" data-ng-show="registration.registrationForm.cpass.$error.required && registration.submitted">
+               {{registration.famMessages.ERROR.M200006}}
+              </small>
+          </div>
+        </div>
+        <label class="item item-select item-stacked-label select-box" id="registetion-select6">
+          <select ng-model="userVO.bday" 
+               ng-options="option.id as option.optionValue for option in registration.setDays" ng-init="userVO.bday=''">
+             <option value=''>Birth Day</option>
+          </select>
+        </label>        
+        <label class="item item-select item-stacked-label select-box" id="registetion-select4">
+          <select ng-model="userVO.bmonth" 
+               ng-options="option.id as option.optionValue for option in registration.setMonth" ng-init="userVO.bmonth=''">
+             <option value=''>Birth Month</option>
+          </select>
+        </label>
+        <label class="item item-select item-stacked-label select-box" id="registetion-select3">
+          <select ng-model="userVO.byear" 
+               ng-options="option.id as option.optionValue for option in registration.birthYears" ng-init="userVO.byear=''">
+             <option value=''>Birth Year</option>
+          </select>
+        </label>
+      </ion-list>
+      <div class="spacer" style="width: 0px; height: 0px;"></div>
+      <ion-checkbox id="registetion-checkbox1" class="chk-box item-stacked-label">Join Existing Family? </ion-checkbox>
+      <ion-checkbox id="registetion-checkbox2" class="chk-box item-stacked-label" ng-change = "registration.checkedOrNot(termsandpolicy)" data-ng-model="termsandpolicy" ng-true-value="'On'" ng-false-value="'Off'">Accept terms and conditions</ion-checkbox>
+      <div class="spacer" style="width: 300px; height: 15px;"></div>
+      <button type="submit" id="registetion-button24" style="color:#F5FFFA;" data-ng-click="registration.onsubmit(userVO)" class="button button-positive button-block">Create Account</button>
+      <button id="registetion-button25" ui-sref="{{registration.famConstants.STATE_USER.LOGIN}}" class="button button-positive  button-block button-clear">Back to login</button>
+    </form>
+    <div class="spacer" style="width: 300px; height: 14px;"></div>
+  </ion-content>
+</ion-view>
